@@ -1,0 +1,27 @@
+{
+  "name": "xagent-litepaper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "types:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "nextra": "4.6.1",
+    "nextra-theme-docs": "4.6.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "@types/react": "19.1.8",
+    "typescript": "5.7.3"
+  },
+  "overrides": {
+    "zod": "4.3.6"
+  }
+}
