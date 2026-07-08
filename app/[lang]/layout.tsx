@@ -37,7 +37,7 @@ const RootLayout: FC<LayoutProps> = async ({ children, params }) => {
           <b>X-Agent</b>
         </span>
       }
-      projectLink="https://github.com/xagentAI/xagent-litepaper"
+      projectLink="https://github.com/xagentAI/xagent-docs"
     >
       <LocaleSwitch lite />
     </Navbar>
@@ -57,7 +57,7 @@ const RootLayout: FC<LayoutProps> = async ({ children, params }) => {
           navbar={navbar}
           footer={footer}
           darkMode={false}
-          docsRepositoryBase="https://github.com/xagentAI/xagent-litepaper/tree/main"
+          docsRepositoryBase="https://github.com/xagentAI/xagent-docs/tree/main"
           i18n={[
             { locale: 'en', name: 'English' },
             { locale: 'ko', name: '한국어' },

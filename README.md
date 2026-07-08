@@ -67,7 +67,7 @@ already wired up in `app/[lang]/layout.tsx`.
 
 ## Deploy to Vercel
 
-1. Push this repo to `https://github.com/xagentAI/xagent-litepaper`.
+1. Push this repo to `https://github.com/xagentAI/xagent-docs`.
 2. In Vercel, **New Project → Import** the repo.
 3. Framework preset: **Next.js** (auto-detected). Build command `next build`,
    install command `npm install`. No env vars required.
