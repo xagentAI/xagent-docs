@@ -1,0 +1,26 @@
+{
+  "en": [
+    "",
+    "build/api-sdk",
+    "build/create-agent",
+    "build/deployment",
+    "build/marketplace",
+    "build/playbooks",
+    "changelog",
+    "disclaimer",
+    "how-it-works",
+    "litepaper",
+    "resources/brand-kit",
+    "resources/contact",
+    "resources/faq",
+    "resources/glossary",
+    "resources/media",
+    "resources/security",
+    "token/addresses",
+    "token/governance",
+    "token/overview",
+    "token/utility"
+  ],
+  "ja": ["", "litepaper"],
+  "ko": ["", "litepaper"]
+}

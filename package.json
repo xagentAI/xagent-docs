@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run locales:check && next build",
+    "locales:check": "node scripts/check-locale-routes.mjs",
     "start": "next start",
     "types:check": "tsc --noEmit"
   },

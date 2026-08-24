@@ -1,4 +1,5 @@
 import nextra from 'nextra'
+import localeRoutes from './locale-routes.json' with { type: 'json' }
 
 const withNextra = nextra({
   defaultShowCopyCode: true,
@@ -13,7 +14,7 @@ export default withNextra({
     root: import.meta.dirname
   },
   i18n: {
-    locales: ['en', 'ko', 'ja'],
+    locales: Object.keys(localeRoutes),
     defaultLocale: 'en'
   }
 })
