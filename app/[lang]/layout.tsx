@@ -3,6 +3,7 @@ import { Footer, Layout, LocaleSwitch, Navbar } from 'nextra-theme-docs'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import type { FC, ReactNode } from 'react'
+import { DocumentLastUpdated } from '../document-last-updated'
 import 'nextra-theme-docs/style.css'
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ const RootLayout: FC<LayoutProps> = async ({ children, params }) => {
           footer={footer}
           darkMode={false}
           docsRepositoryBase="https://github.com/xagentAI/xagent-docs/tree/main"
+          lastUpdated={<DocumentLastUpdated />}
           i18n={[
             { locale: 'en', name: 'English' },
             { locale: 'ko', name: '한국어' },
