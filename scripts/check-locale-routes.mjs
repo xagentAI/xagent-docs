@@ -17,7 +17,9 @@ async function collectRoutes(directory, prefix = '') {
     if (entry.isDirectory()) {
       routes.push(...(await collectRoutes(absolutePath, relativePath)))
     } else if (entry.isFile() && /\.mdx?$/.test(entry.name)) {
-      const route = relativePath.replace(/\.mdx?$/, '').replace(/(^|\/)index$/, '')
+      const route = relativePath
+        .replace(/\.mdx?$/, '')
+        .replace(/(^|\/)index$/, '')
       routes.push(route)
     }
   }
@@ -25,11 +27,13 @@ async function collectRoutes(directory, prefix = '') {
   return routes.sort()
 }
 
-const contentLocales = (await readdir(path.join(projectRoot, 'content'), {
-  withFileTypes: true
-}))
-  .filter(entry => entry.isDirectory())
-  .map(entry => entry.name)
+const contentLocales = (
+  await readdir(path.join(projectRoot, 'content'), {
+    withFileTypes: true
+  })
+)
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
   .sort()
 
 assert.deepEqual(

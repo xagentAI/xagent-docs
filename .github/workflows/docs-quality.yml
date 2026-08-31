@@ -1,0 +1,39 @@
+name: Docs quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run test:last-updated
+      - run: npm audit --audit-level=low
+      - run: npm run build
+      - run: npm run types:check
+      - name: Verify production routes and downloads
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3100 > /tmp/xagent-docs.log 2>&1 &
+          docs_server_pid=$!
+          trap 'kill "$docs_server_pid"; cat /tmp/xagent-docs.log' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3100/en > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run test:smoke

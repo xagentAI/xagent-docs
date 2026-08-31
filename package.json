@@ -6,24 +6,39 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run locales:check && next build",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "locales:check": "node scripts/check-locale-routes.mjs",
     "start": "next start",
     "test:last-updated": "node --test scripts/document-last-updated.test.mjs",
+    "test:smoke": "node --test scripts/site-smoke.test.mjs",
+    "lint": "eslint . --max-warnings=0",
+    "format:check": "prettier --check app scripts proxy.ts mdx-components.js next.config.mjs eslint.config.mjs package.json locale-routes.json tsconfig.json",
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "16.2.10",
+    "next": "16.3.3",
     "nextra": "4.6.1",
     "nextra-theme-docs": "4.6.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@types/node": "22.10.5",
-    "@types/react": "19.1.8",
-    "typescript": "5.7.3"
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@eslint/js": "10.0.1",
+    "@next/eslint-plugin-next": "16.3.3",
+    "eslint": "10.9.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.11.0",
+    "pagefind": "1.5.2",
+    "prettier": "3.9.6",
+    "typescript-eslint": "8.68.0",
+    "typescript": "6.0.3"
   },
   "overrides": {
+    "speech-rule-engine": {
+      "@xmldom/xmldom": "0.9.12"
+    },
     "zod": "4.3.6"
   }
 }

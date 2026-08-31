@@ -1,0 +1,7 @@
+# Static public files are served by Netlify's CDN, bypassing Next.js headers.
+[[headers]]
+for = "/audits/PeckShield-Audit-Report-ERC20-XAgentToken-v1.0.pdf"
+
+[headers.values]
+Content-Disposition = 'attachment; filename="PeckShield-Audit-Report-ERC20-XAgentToken-v1.0.pdf"'
+X-Content-Type-Options = "nosniff"

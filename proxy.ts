@@ -11,6 +11,11 @@ const localizedRoutes = new Map<string, Set<string>>(
 )
 
 export function proxy(request: NextRequest) {
+  const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
+  if (cookieLocale && !Object.hasOwn(localeRoutes, cookieLocale)) {
+    // Nextra uses this value in a redirect URL; only supported locale names are safe.
+    request.cookies.delete('NEXT_LOCALE')
+  }
   const [locale = '', ...routeSegments] = request.nextUrl.pathname
     .split('/')
     .filter(Boolean)

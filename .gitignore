@@ -4,6 +4,8 @@
 # next.js
 /.next/
 /out/
+/public/_pagefind/
+*.tsbuildinfo
 
 # production
 /build

@@ -21,6 +21,24 @@
     "token/overview",
     "token/utility"
   ],
-  "ja": ["", "litepaper"],
-  "ko": ["", "litepaper"]
+  "ja": [
+    "",
+    "changelog",
+    "disclaimer",
+    "litepaper",
+    "resources/brand-kit",
+    "resources/contact",
+    "resources/security",
+    "token/addresses"
+  ],
+  "ko": [
+    "",
+    "changelog",
+    "disclaimer",
+    "litepaper",
+    "resources/brand-kit",
+    "resources/contact",
+    "resources/security",
+    "token/addresses"
+  ]
 }

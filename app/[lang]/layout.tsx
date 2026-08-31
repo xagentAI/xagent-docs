@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
 import { Footer, Layout, LocaleSwitch, Navbar } from 'nextra-theme-docs'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import type { FC, ReactNode } from 'react'
 import { DocumentLastUpdated } from '../document-last-updated'
+import localeRoutes from '../../locale-routes.json'
 import 'nextra-theme-docs/style.css'
 
 export const metadata: Metadata = {
@@ -22,13 +25,15 @@ type LayoutProps = Readonly<{
 
 const RootLayout: FC<LayoutProps> = async ({ children, params }) => {
   const { lang } = await params
+  if (!Object.hasOwn(localeRoutes, lang)) notFound()
   const pageMap = await getPageMap(`/${lang}`)
 
   const navbar = (
     <Navbar
       logo={
         <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <img
+          <Image
+            unoptimized
             src="/logo.png"
             alt="X-Agent"
             width={28}
@@ -45,9 +50,7 @@ const RootLayout: FC<LayoutProps> = async ({ children, params }) => {
   )
 
   const footer = (
-    <Footer>
-      X-Agent Docs · {new Date().getFullYear()} © X-Agent
-    </Footer>
+    <Footer>X-Agent Docs · {new Date().getFullYear()} © X-Agent</Footer>
   )
 
   return (
