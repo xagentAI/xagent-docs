@@ -11,6 +11,32 @@ const withNextra = nextra({
 
 export default withNextra({
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/favicon.ico',
+        destination: '/logo.png',
+        permanent: true,
+        locale: false
+      }
+    ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/audits/PeckShield-Audit-Report-ERC20-XAgentToken-v1.0.pdf',
+        locale: false,
+        headers: [
+          {
+            key: 'Content-Disposition',
+            value:
+              'attachment; filename="PeckShield-Audit-Report-ERC20-XAgentToken-v1.0.pdf"'
+          },
+          { key: 'X-Content-Type-Options', value: 'nosniff' }
+        ]
+      }
+    ]
+  },
   env: {
     NEXT_PUBLIC_DOCUMENT_LAST_UPDATED: JSON.stringify(documentLastUpdated)
   },

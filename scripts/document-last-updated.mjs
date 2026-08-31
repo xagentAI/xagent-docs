@@ -14,14 +14,14 @@ const runGit = (root, args) => {
   }
 }
 
-const listMdxFiles = directory =>
-  readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+const listMdxFiles = (directory) =>
+  readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const path = join(directory, entry.name)
     if (entry.isDirectory()) return listMdxFiles(path)
     return entry.isFile() && entry.name.endsWith('.mdx') ? [path] : []
   })
 
-export const contentPathToRoute = contentPath => {
+export const contentPathToRoute = (contentPath) => {
   const normalized = contentPath.replaceAll('\\', '/')
   const match = normalized.match(/^content\/([^/]+)\/(.+)\.mdx$/)
   if (!match) return undefined
@@ -47,7 +47,8 @@ export const getDocumentLastUpdatedMap = (root = process.cwd()) => {
       ? ''
       : runGit(root, ['log', '-1', '--format=%cI', '--', contentPath])
 
-    timestamps[route] = committedAt || statSync(absolutePath).mtime.toISOString()
+    timestamps[route] =
+      committedAt || statSync(absolutePath).mtime.toISOString()
   }
 
   return timestamps
