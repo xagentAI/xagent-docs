@@ -40,6 +40,8 @@ Publish through the repository's existing GitHub-to-Netlify pipeline only after 
 - All three Litepaper source files are unchanged from the approved production baseline. Token terms, allocation visibility, and whitepaper download policy are preserved.
 - Production deployment and live smoke results must be verified separately after merging; this evidence describes the release candidate, not the live site.
 
+The first Netlify preview passed 50/51 smoke tests: the audit PDF was byte-accessible, but its attachment header was absent because static CDN delivery bypasses Next.js headers. Add an exact-path CDN header rule in `netlify.toml`, retaining the Next.js rule for local/other hosts, then rerun the same unchanged suite against the replacement preview before production.
+
 ## Sources
 
 - [Next.js 16.3.3 security release](https://github.com/vercel/next.js/releases/tag/v16.3.3)
