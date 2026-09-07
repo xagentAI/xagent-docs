@@ -152,3 +152,28 @@ test('audit download serves the exact original PDF as an attachment', async () =
     'd2b40ecdf9d604a81e41313aa4457a4819df6c4915b6ee051dbf09d575a3680b'
   )
 })
+
+for (const path of [
+  '/brand/x-agent-logo-pack.zip',
+  '/brand/x-agent-social-banner-1500x500.jpeg',
+  '/brand/x-agent-avatar-green.svg',
+  '/brand/x-agent-avatar-white.svg',
+  '/brand/x-agent-avatar-dark-green.svg',
+  '/brand/x-agent-avatar-dark-white.svg',
+  '/brand/x-agent-horizontal-light.svg',
+  '/brand/x-agent-horizontal-green.svg',
+  '/brand/x-agent-horizontal-white.svg',
+  '/brand/x-agent-horizontal-dark-green.svg',
+  '/brand/x-agent-horizontal-dark-white.svg',
+  '/brand/x-agent-stacked-light.svg',
+  '/brand/x-agent-stacked-green.svg',
+  '/brand/x-agent-stacked-white.svg',
+  '/brand/x-agent-stacked-dark-green.svg',
+  '/brand/x-agent-stacked-dark-white.svg'
+]) {
+  test(`brand kit asset is published: ${path}`, async () => {
+    const response = await request(path)
+    assert.equal(response.status, 200)
+    assert.ok((await response.arrayBuffer()).byteLength > 0)
+  })
+}
