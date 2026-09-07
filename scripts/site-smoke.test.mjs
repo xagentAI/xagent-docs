@@ -43,6 +43,15 @@ for (const locale of ['en', 'ja', 'ko']) {
       new RegExp(`href="/${locale}/token-allocation-vesting"`)
     )
   })
+
+  test(`the ${locale} brand kit includes the official social banner`, async () => {
+    const response = await request(`/${locale}/resources/brand-kit`)
+    assert.equal(response.status, 200)
+    assert.match(
+      await response.text(),
+      /\/brand\/x-agent-social-banner-1500x500\.jpeg/
+    )
+  })
 }
 
 for (const [locale, sectionLabel, indexLabel, detailLabel] of [
