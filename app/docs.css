@@ -1,3 +1,7 @@
+.token-allocation-table {
+  margin-top: 1.5rem;
+}
+
 .token-allocation-table:focus-visible {
   border-radius: 0.25rem;
   outline: 2px solid currentColor;
