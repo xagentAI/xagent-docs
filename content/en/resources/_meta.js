@@ -1,8 +1,14 @@
 export default {
   faq: 'FAQ',
   glossary: 'Glossary',
-  'brand-kit': 'Brand Kit',
+  'brand-kit': 'Brand & Media Kit',
   contact: 'Contact & Support',
-  security: 'Security & Audits',
-  media: 'Media / Press Kit'
+  changelog: {
+    title: 'Documentation Changelog',
+    href: '/en/changelog'
+  },
+  disclaimer: {
+    title: 'Legal & Disclaimer',
+    href: '/en/disclaimer'
+  }
 }

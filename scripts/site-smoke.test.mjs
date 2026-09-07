@@ -29,8 +29,67 @@ for (const [locale, paths] of Object.entries(routes)) {
   }
 }
 
+for (const locale of ['en', 'ja', 'ko']) {
+  test(`the ${locale} announcement index links to its localized detail page`, async () => {
+    const response = await request(`/${locale}/announcement`)
+    assert.equal(response.status, 200)
+    const html = await response.text()
+    assert.match(
+      html,
+      new RegExp(`href="/${locale}/announcement/token-allocation-vesting"`)
+    )
+    assert.doesNotMatch(
+      html,
+      new RegExp(`href="/${locale}/token-allocation-vesting"`)
+    )
+  })
+}
+
+for (const [locale, sectionLabel, indexLabel, detailLabel] of [
+  [
+    'en',
+    'Announcements',
+    'Latest Updates',
+    'XAGT Token Allocation &amp; Vesting'
+  ],
+  ['ja', 'お知らせ', '最新情報', 'トークン配分およびベスティングスケジュール'],
+  ['ko', '공지사항', '최신 공지', '토큰 배분 및 베스팅 일정']
+]) {
+  test(`the ${locale} announcement navigation exposes the index and detail page`, async () => {
+    const response = await request(`/${locale}/announcement`)
+    assert.equal(response.status, 200)
+    const html = await response.text()
+    assert.match(html, new RegExp(`>${sectionLabel}<`))
+    assert.match(html, new RegExp(`>${indexLabel}<`))
+    assert.match(html, new RegExp(`>${detailLabel}<`))
+  })
+}
+
+for (const locale of ['en', 'ja', 'ko']) {
+  test(`the legacy ${locale} token allocation URL redirects to the announcement`, async () => {
+    const response = await request(`/${locale}/token-allocation-vesting`)
+    assert.equal(response.status, 308)
+    assert.equal(
+      new URL(response.headers.get('location'), baseUrl).pathname,
+      `/${locale}/announcement/token-allocation-vesting`
+    )
+  })
+
+  test(`the legacy ${locale} security URL redirects to the consolidated security page`, async () => {
+    const response = await request(`/${locale}/resources/security`)
+    assert.equal(response.status, 308)
+    assert.equal(
+      new URL(response.headers.get('location'), baseUrl).pathname,
+      `/${locale}/security`
+    )
+  })
+}
+
 for (const path of [
   '/en/not-a-real-page',
+  '/en/resources/media',
+  '/en/token/governance',
+  '/en/token/utility',
   '/missing-asset.png',
   '/audits/missing.pdf'
 ]) {
@@ -79,17 +138,6 @@ for (const [cookie, expected] of [
   })
 }
 
-for (const locale of ['ja', 'ko']) {
-  test(`untranslated ${locale} routes keep their documented fallback`, async () => {
-    const response = await request(`/${locale}/resources/faq`)
-    assert.equal(response.status, 307)
-    assert.equal(
-      new URL(response.headers.get('location'), baseUrl).pathname,
-      `/${locale}`
-    )
-  })
-}
-
 test('audit download serves the exact original PDF as an attachment', async () => {
   const response = await request(
     '/audits/PeckShield-Audit-Report-ERC20-XAgentToken-v1.0.pdf'
@@ -104,3 +152,28 @@ test('audit download serves the exact original PDF as an attachment', async () =
     'd2b40ecdf9d604a81e41313aa4457a4819df6c4915b6ee051dbf09d575a3680b'
   )
 })
+
+for (const path of [
+  '/brand/x-agent-logo-pack.zip',
+  '/brand/x-agent-social-banner-1500x500.jpeg',
+  '/brand/x-agent-avatar-green.svg',
+  '/brand/x-agent-avatar-white.svg',
+  '/brand/x-agent-avatar-dark-green.svg',
+  '/brand/x-agent-avatar-dark-white.svg',
+  '/brand/x-agent-horizontal-light.svg',
+  '/brand/x-agent-horizontal-green.svg',
+  '/brand/x-agent-horizontal-white.svg',
+  '/brand/x-agent-horizontal-dark-green.svg',
+  '/brand/x-agent-horizontal-dark-white.svg',
+  '/brand/x-agent-stacked-light.svg',
+  '/brand/x-agent-stacked-green.svg',
+  '/brand/x-agent-stacked-white.svg',
+  '/brand/x-agent-stacked-dark-green.svg',
+  '/brand/x-agent-stacked-dark-white.svg'
+]) {
+  test(`brand kit asset is published: ${path}`, async () => {
+    const response = await request(path)
+    assert.equal(response.status, 200)
+    assert.ok((await response.arrayBuffer()).byteLength > 0)
+  })
+}
