@@ -13,6 +13,18 @@ export default withNextra({
   reactStrictMode: true,
   async redirects() {
     return [
+      ...Object.keys(localeRoutes).map((locale) => ({
+        source: `/${locale}/token-allocation-vesting`,
+        destination: `/${locale}/announcement/token-allocation-vesting`,
+        permanent: true,
+        locale: false
+      })),
+      ...Object.keys(localeRoutes).map((locale) => ({
+        source: `/${locale}/resources/security`,
+        destination: `/${locale}/security`,
+        permanent: true,
+        locale: false
+      })),
       {
         source: '/favicon.ico',
         destination: '/logo.png',

@@ -7,6 +7,7 @@ import { getPageMap } from 'nextra/page-map'
 import type { FC, ReactNode } from 'react'
 import { DocumentLastUpdated } from '../document-last-updated'
 import localeRoutes from '../../locale-routes.json'
+import '../docs.css'
 import 'nextra-theme-docs/style.css'
 
 export const metadata: Metadata = {

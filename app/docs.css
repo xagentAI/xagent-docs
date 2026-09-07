@@ -1,0 +1,26 @@
+.token-allocation-table:focus-visible {
+  border-radius: 0.25rem;
+  outline: 2px solid currentColor;
+  outline-offset: 0.25rem;
+}
+
+.token-allocation-table :is(th, td):first-child {
+  min-width: 8rem;
+}
+
+.token-allocation-table :is(th, td):nth-child(2) {
+  min-width: 7rem;
+}
+
+@media (max-width: 48rem) {
+  .token-allocation-table {
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .token-allocation-table table {
+    min-width: 44rem;
+  }
+}

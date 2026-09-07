@@ -1,6 +1,4 @@
 export default {
-  overview: 'Token Overview',
-  utility: 'Utility & Gas Mechanics',
-  addresses: 'Contract Addresses',
-  governance: 'Governance'
+  overview: 'XAGT Overview',
+  addresses: 'Contract Address'
 }

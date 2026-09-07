@@ -1,10 +1,22 @@
 export default {
-  index: 'Introduction',
-  'how-it-works': 'How It Works',
+  index: 'Overview',
+  'how-it-works': {
+    title: 'How X-Agent Works',
+    display: 'hidden'
+  },
   litepaper: 'Litepaper',
-  build: 'Build',
-  token: 'Token ($XAGT)',
+  token: 'XAGT',
+  announcement: {
+    title: 'Announcements'
+  },
+  security: 'Security',
   resources: 'Resources',
-  changelog: 'Changelog',
-  disclaimer: 'Disclaimer'
+  changelog: {
+    title: 'Changelog',
+    display: 'hidden'
+  },
+  disclaimer: {
+    title: 'Disclaimer',
+    display: 'hidden'
+  }
 }

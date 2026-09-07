@@ -1,44 +1,50 @@
 {
   "en": [
     "",
-    "build/api-sdk",
-    "build/create-agent",
-    "build/deployment",
-    "build/marketplace",
-    "build/playbooks",
+    "announcement",
     "changelog",
     "disclaimer",
     "how-it-works",
     "litepaper",
+    "security",
+    "announcement/token-allocation-vesting",
     "resources/brand-kit",
     "resources/contact",
     "resources/faq",
     "resources/glossary",
-    "resources/media",
-    "resources/security",
     "token/addresses",
-    "token/governance",
-    "token/overview",
-    "token/utility"
+    "token/overview"
   ],
   "ja": [
     "",
+    "announcement",
     "changelog",
     "disclaimer",
+    "how-it-works",
     "litepaper",
+    "security",
+    "announcement/token-allocation-vesting",
     "resources/brand-kit",
     "resources/contact",
-    "resources/security",
-    "token/addresses"
+    "resources/faq",
+    "resources/glossary",
+    "token/addresses",
+    "token/overview"
   ],
   "ko": [
     "",
+    "announcement",
     "changelog",
     "disclaimer",
+    "how-it-works",
     "litepaper",
+    "security",
+    "announcement/token-allocation-vesting",
     "resources/brand-kit",
     "resources/contact",
-    "resources/security",
-    "token/addresses"
+    "resources/faq",
+    "resources/glossary",
+    "token/addresses",
+    "token/overview"
   ]
 }
