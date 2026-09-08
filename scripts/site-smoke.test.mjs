@@ -30,6 +30,17 @@ for (const [locale, paths] of Object.entries(routes)) {
 }
 
 for (const locale of ['en', 'ja', 'ko']) {
+  test(`the ${locale} homepage exposes four structured entry cards`, async () => {
+    const response = await request(`/${locale}`)
+    assert.equal(response.status, 200)
+    const html = await response.text()
+    assert.equal((html.match(/class="home-entry-card"/g) || []).length, 4)
+    assert.match(
+      html,
+      /class="home-entry-title"[\s\S]+class="home-entry-description"/
+    )
+  })
+
   test(`the ${locale} announcement index links to its localized detail page`, async () => {
     const response = await request(`/${locale}/announcement`)
     assert.equal(response.status, 200)

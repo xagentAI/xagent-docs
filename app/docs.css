@@ -2,6 +2,80 @@
   margin-top: 1.5rem;
 }
 
+.home-entry-grid {
+  --home-entry-accent: #08f0a5;
+  --home-entry-border: #e1e5e3;
+  --home-entry-ink: #171b1a;
+  --home-entry-muted: #59635f;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2.5rem;
+}
+
+.home-entry-card {
+  display: flex;
+  min-width: 0;
+  min-height: 12rem;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid var(--home-entry-border);
+  border-radius: 0.85rem;
+  background: #ffffff;
+  color: var(--home-entry-ink);
+  text-decoration: none;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
+}
+
+.home-entry-card:hover {
+  border-color: var(--home-entry-accent);
+  box-shadow: 0 0.75rem 2rem rgba(23, 27, 26, 0.08);
+  color: var(--home-entry-ink);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.home-entry-card:focus-visible {
+  outline: 2px solid var(--home-entry-accent);
+  outline-offset: 3px;
+}
+
+.home-entry-index {
+  color: #68716e;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.home-entry-title {
+  margin-top: 1.25rem;
+  color: var(--home-entry-ink);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.home-entry-description {
+  margin-top: 0.625rem;
+  color: var(--home-entry-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.home-entry-action {
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-bottom: 1px solid currentColor;
+  color: var(--home-entry-ink);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .token-allocation-table:focus-visible {
   border-radius: 0.25rem;
   outline: 2px solid currentColor;
@@ -213,6 +287,14 @@
 }
 
 @media (max-width: 40rem) {
+  .home-entry-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-entry-card {
+    min-height: 0;
+  }
+
   .brand-kit-actions,
   .brand-kit-button {
     width: 100%;
@@ -233,5 +315,15 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-entry-card {
+    transition: none;
+  }
+
+  .home-entry-card:hover {
+    transform: none;
   }
 }
