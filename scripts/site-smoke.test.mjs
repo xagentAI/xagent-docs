@@ -39,6 +39,7 @@ for (const locale of ['en', 'ja', 'ko']) {
       html,
       /class="home-entry-title"[\s\S]+class="home-entry-description"/
     )
+    assert.doesNotMatch(html, /class="home-entry-description"><p/)
   })
 
   test(`the ${locale} announcement index links to its localized detail page`, async () => {
