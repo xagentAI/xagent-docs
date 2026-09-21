@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="980" viewBox="0 0 1760 980">
+<rect width="100%" height="100%" rx="30" fill="#f7faf7"/>
+<g font-family="Arial, Helvetica, sans-serif">
+  <text x="880" y="64" text-anchor="middle" fill="#101b16" font-size="38" font-weight="800">XAGT CUMULATIVE UNLOCK CURVE</text>
+  <text x="880" y="105" text-anchor="middle" fill="#64736c" font-size="23">Stacked allocation release - TGE through Q12</text>
+  <rect x="150" y="150" width="1525" height="640" rx="18" fill="#ffffff" stroke="#dce5df" stroke-width="2"/>
+  
+  <line x1="150" y1="790" x2="1675" y2="790" stroke="#dce5df" stroke-width="2" stroke-dasharray="7 8"/>
+  <text x="130" y="797" text-anchor="end" fill="#5f6f68" font-size="23">0%</text>
+  <line x1="150" y1="664.5098039215686" x2="1675" y2="664.5098039215686" stroke="#dce5df" stroke-width="2" stroke-dasharray="7 8"/>
+  <text x="130" y="671.5098039215686" text-anchor="end" fill="#5f6f68" font-size="23">20%</text>
+  <line x1="150" y1="539.0196078431372" x2="1675" y2="539.0196078431372" stroke="#dce5df" stroke-width="2" stroke-dasharray="7 8"/>
+  <text x="130" y="546.0196078431372" text-anchor="end" fill="#5f6f68" font-size="23">40%</text>
+  <line x1="150" y1="413.52941176470586" x2="1675" y2="413.52941176470586" stroke="#dce5df" stroke-width="2" stroke-dasharray="7 8"/>
+  <text x="130" y="420.52941176470586" text-anchor="end" fill="#5f6f68" font-size="23">60%</text>
+  <line x1="150" y1="288.03921568627453" x2="1675" y2="288.03921568627453" stroke="#dce5df" stroke-width="2" stroke-dasharray="7 8"/>
+  <text x="130" y="295.03921568627453" text-anchor="end" fill="#5f6f68" font-size="23">80%</text>
+  <line x1="150" y1="162.54901960784315" x2="1675" y2="162.54901960784315" stroke="#dce5df" stroke-width="2" stroke-dasharray="7 8"/>
+  <text x="130" y="169.54901960784315" text-anchor="end" fill="#5f6f68" font-size="23">100%</text>
+  <clipPath id="plotClip"><rect x="150" y="150" width="1525" height="640" rx="18"/></clipPath>
+  <g clip-path="url(#plotClip)"><polygon points="150.0,758.6 277.1,717.1 404.2,675.5 531.3,633.9 658.3,592.4 785.4,550.8 912.5,509.2 1039.6,467.6 1166.7,426.1 1293.8,426.1 1420.8,426.1 1547.9,426.1 1675.0,426.1 1675.0,790.0 1547.9,790.0 1420.8,790.0 1293.8,790.0 1166.7,790.0 1039.6,790.0 912.5,790.0 785.4,790.0 658.3,790.0 531.3,790.0 404.2,790.0 277.1,790.0 150.0,790.0" fill="#b7e4a9"/><polygon points="150.0,699.0 277.1,653.9 404.2,608.8 531.3,563.7 658.3,518.6 785.4,473.5 912.5,428.4 1039.6,383.3 1166.7,338.2 1293.8,338.2 1420.8,338.2 1547.9,338.2 1675.0,338.2 1675.0,426.1 1547.9,426.1 1420.8,426.1 1293.8,426.1 1166.7,426.1 1039.6,467.6 912.5,509.2 785.4,550.8 658.3,592.4 531.3,633.9 404.2,675.5 277.1,717.1 150.0,758.6" fill="#86cd88"/><polygon points="150.0,692.7 277.1,638.2 404.2,583.7 531.3,529.2 658.3,474.7 785.4,420.2 912.5,375.1 1039.6,330.0 1166.7,284.9 1293.8,284.9 1420.8,284.9 1547.9,284.9 1675.0,284.9 1675.0,338.2 1547.9,338.2 1420.8,338.2 1293.8,338.2 1166.7,338.2 1039.6,383.3 912.5,428.4 785.4,473.5 658.3,518.6 531.3,563.7 404.2,608.8 277.1,653.9 150.0,699.0" fill="#58ad72"/><polygon points="150.0,692.7 277.1,638.2 404.2,583.7 531.3,529.2 658.3,474.7 785.4,412.4 912.5,359.4 1039.6,306.5 1166.7,253.5 1293.8,245.7 1420.8,237.8 1547.9,230.0 1675.0,222.2 1675.0,284.9 1547.9,284.9 1420.8,284.9 1293.8,284.9 1166.7,284.9 1039.6,330.0 912.5,375.1 785.4,420.2 658.3,474.7 531.3,529.2 404.2,583.7 277.1,638.2 150.0,692.7" fill="#338b5d"/><polygon points="150.0,667.6 277.1,613.1 404.2,558.6 531.3,504.1 658.3,449.6 785.4,387.3 912.5,334.3 1039.6,281.4 1166.7,228.4 1293.8,220.6 1420.8,212.7 1547.9,204.9 1675.0,197.1 1675.0,222.2 1547.9,230.0 1420.8,237.8 1293.8,245.7 1166.7,253.5 1039.6,306.5 912.5,359.4 785.4,412.4 658.3,474.7 531.3,529.2 404.2,583.7 277.1,638.2 150.0,692.7" fill="#1f6b4b"/><polygon points="150.0,667.6 277.1,613.1 404.2,558.6 531.3,504.1 658.3,449.6 785.4,382.9 912.5,325.7 1039.6,268.4 1166.7,211.2 1293.8,199.0 1420.8,186.9 1547.9,174.7 1675.0,162.5 1675.0,197.1 1547.9,204.9 1420.8,212.7 1293.8,220.6 1166.7,228.4 1039.6,281.4 912.5,334.3 785.4,387.3 658.3,449.6 531.3,504.1 404.2,558.6 277.1,613.1 150.0,667.6" fill="#0d4738"/></g>
+  <polyline points="150.0,667.6 277.1,613.1 404.2,558.6 531.3,504.1 658.3,449.6 785.4,382.9 912.5,325.7 1039.6,268.4 1166.7,211.2 1293.8,199.0 1420.8,186.9 1547.9,174.7 1675.0,162.5" fill="none" stroke="#bd7b18" stroke-width="3" stroke-dasharray="4 6"/>
+  <circle cx="1675" cy="162.54901960784315" r="8" fill="#153b2c"/>
+  
+  <text x="150" y="836" text-anchor="middle" fill="#51615a" font-size="22" font-weight="700">TGE</text>
+  <text x="277.0833333333333" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q1</text>
+  <text x="404.16666666666663" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q2</text>
+  <text x="531.25" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q3</text>
+  <text x="658.3333333333333" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q4</text>
+  <text x="785.4166666666666" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q5</text>
+  <text x="912.5" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q6</text>
+  <text x="1039.5833333333335" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q7</text>
+  <text x="1166.6666666666665" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q8</text>
+  <text x="1293.75" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q9</text>
+  <text x="1420.8333333333333" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q10</text>
+  <text x="1547.9166666666667" y="836" text-anchor="middle" fill="#51615a" font-size="22">Q11</text>
+  <text x="1675" y="836" text-anchor="middle" fill="#51615a" font-size="22" font-weight="700">Q12</text>
+  <text x="50" y="470" transform="rotate(-90 50 470)" text-anchor="middle" fill="#425249" font-size="23" font-weight="700">Cumulative unlock</text>
+  <rect x="170" y="170" width="380" height="290" rx="20" fill="#ffffff" fill-opacity="0.92" stroke="#d8e1dc" stroke-width="2"/>
+  
+  <rect x="186" y="184" width="22" height="18" rx="4" fill="#b7e4a9"/>
+  <text x="222" y="200" fill="#37443e" font-size="21">Community (58%)</text>
+  <rect x="186" y="224" width="22" height="18" rx="4" fill="#86cd88"/>
+  <text x="222" y="240" fill="#37443e" font-size="21">Marketing (14%)</text>
+  <rect x="186" y="264" width="22" height="18" rx="4" fill="#58ad72"/>
+  <text x="222" y="280" fill="#37443e" font-size="21">Treasury (8.5%)</text>
+  <rect x="186" y="304" width="22" height="18" rx="4" fill="#338b5d"/>
+  <text x="222" y="320" fill="#37443e" font-size="21">Team (10%)</text>
+  <rect x="186" y="344" width="22" height="18" rx="4" fill="#1f6b4b"/>
+  <text x="222" y="360" fill="#37443e" font-size="21">Market Making / Liquidity (4%)</text>
+  <rect x="186" y="384" width="22" height="18" rx="4" fill="#0d4738"/>
+  <text x="222" y="400" fill="#37443e" font-size="21">Investor (5.5%)</text>
+  
+  <rect x="174" y="611.6470588235294" width="255" height="76" rx="13" fill="#ffffff" fill-opacity="0.94" stroke="#d8e1dc" stroke-width="2"/>
+  <text x="194" y="640.6470588235294" fill="#66756e" font-size="18" font-weight="650">INITIAL CIRCULATION</text>
+  <text x="194" y="669.6470588235294" fill="#12221b" font-size="25" font-weight="800">19.5% at TGE</text>
+  <text x="1691" y="170.54901960784315" fill="#12221b" font-size="24" font-weight="800">100%</text>
+  <text x="150" y="902" fill="#4d5c55" font-size="18" font-weight="700">Release basis:</text>
+  <text x="292" y="902" fill="#64736c" font-size="18">Community 53% and Marketing 4.5% unlock across Q1-Q8; Treasury 7.5% across Q1-Q5.</text>
+  <text x="150" y="937" fill="#64736c" font-size="18">Team 10% and Investor 5.5% unlock across Q5-Q12; Market Making / Liquidity is fully unlocked at TGE.</text>
+</g>
+</svg>

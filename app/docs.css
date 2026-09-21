@@ -2,6 +2,20 @@
   margin-top: 1.5rem;
 }
 
+.token-unlock-chart {
+  max-width: 100%;
+  margin: 2rem 0;
+  overflow-x: auto;
+  border-radius: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.token-unlock-chart img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .home-entry-grid {
   --home-entry-accent: #08f0a5;
   --home-entry-border: #e1e5e3;
@@ -91,6 +105,10 @@
 }
 
 @media (max-width: 48rem) {
+  .token-unlock-chart img {
+    min-width: 44rem;
+  }
+
   .token-allocation-table {
     max-width: 100%;
     overflow-x: auto;
