@@ -64,6 +64,16 @@ for (const locale of ['en', 'ja', 'ko']) {
       /\/brand\/x-agent-social-banner-1500x500\.jpeg/
     )
   })
+
+  test(`the ${locale} Litepaper publishes the current token allocation`, async () => {
+    const response = await request(`/${locale}/litepaper`)
+    assert.equal(response.status, 200)
+    const html = await response.text()
+    assert.match(html, /xagt-cumulative-unlock-corrected\.svg/)
+    assert.match(html, /19\.5%/)
+    assert.match(html, /5%/)
+    assert.match(html, /53%/)
+  })
 }
 
 for (const [locale, sectionLabel, indexLabel, detailLabel] of [
@@ -130,6 +140,16 @@ test('search JavaScript is built and served', async () => {
   const response = await request('/_pagefind/pagefind.js')
   assert.equal(response.status, 200)
   assert.match(response.headers.get('content-type'), /javascript/)
+})
+
+test('the corrected unlock curve publishes the approved TGE circulation', async () => {
+  const response = await request('/xagt-cumulative-unlock-corrected.svg')
+  assert.equal(response.status, 200)
+  assert.match(response.headers.get('content-type'), /image\/svg\+xml/)
+  const svg = await response.text()
+  assert.match(svg, />19\.5% at TGE</)
+  assert.doesNotMatch(svg, /9\.5%[–-]13\.5% at TGE/)
+  assert.doesNotMatch(svg, /Q8 · Community/)
 })
 
 for (const locale of ['en', 'ja', 'ko']) {
