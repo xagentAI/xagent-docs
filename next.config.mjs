@@ -36,6 +36,17 @@ export default withNextra({
   async headers() {
     return [
       {
+        source: '/litepaper/X-Agent-Litepaper-English.pdf',
+        locale: false,
+        headers: [
+          {
+            key: 'Content-Disposition',
+            value: 'attachment; filename="X-Agent-Litepaper-English.pdf"'
+          },
+          { key: 'X-Content-Type-Options', value: 'nosniff' }
+        ]
+      },
+      {
         source: '/audits/PeckShield-Audit-Report-ERC20-XAgentToken-v1.0.pdf',
         locale: false,
         headers: [
